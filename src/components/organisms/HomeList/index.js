@@ -2,6 +2,9 @@
 import React from 'react'
 import { FlatList } from 'react-native'
 import { Card } from '../../molecules'
+import { ListContainer } from './styles'
+import { theme } from '../../../styles/theme'
+import { CustomText } from '../../atoms'
 
 const FAKE_DATa = [
   {
@@ -16,13 +19,23 @@ const FAKE_DATa = [
   },
 ]
 
-export const HomeList = () => {
+export const HomeList = ({ data, title }) => {
   return (
-    <FlatList
-      horizontal
-      data={FAKE_DATa}
-      renderItem={({ item }) => <Card item={item} />}
-      keyExtractor={(item) => String(item.id)}
-    />
+    <ListContainer>
+      <CustomText ml={24} fontFamily="black" size={18}>
+        {title}
+      </CustomText>
+      <FlatList
+        horizontal
+        data={FAKE_DATa}
+        renderItem={({ item }) => <Card item={item} />}
+        keyExtractor={(item) => String(item.id)}
+        contentContainerStyle={{
+          paddingTop: theme.metrics.px(12),
+          paddingLeft: theme.metrics.px(24),
+          paddingBottom: theme.metrics.px(24),
+        }}
+      />
+    </ListContainer>
   )
 }

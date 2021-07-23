@@ -1,10 +1,7 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import { Text } from './styles'
 
-export const CustomText = ({ children, color }) => {
-    return (
-        <Text color={color} >
-            {children}
-        </Text>
-    )
+export const CustomText = ({ children, ...props }) => {
+  return <Text {...props}>{children}</Text>
 }
