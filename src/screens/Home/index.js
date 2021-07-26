@@ -1,4 +1,3 @@
- 
 import React from 'react'
 import { ScreenScrollContainer, HomeList, Hero } from '../../components'
 

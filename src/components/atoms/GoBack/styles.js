@@ -1,4 +1,3 @@
- 
 import styled from 'styled-components/native'
 
 export const GoBackContainer = styled.TouchableOpacity`

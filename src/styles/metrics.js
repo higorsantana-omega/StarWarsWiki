@@ -1,4 +1,3 @@
- 
 import { Dimensions, PixelRatio } from 'react-native'
 
 const { width } = Dimensions.get('window')
@@ -15,5 +14,5 @@ const px = (valuePx) => {
 }
 
 export const metrics = {
-    px,
+  px,
 }

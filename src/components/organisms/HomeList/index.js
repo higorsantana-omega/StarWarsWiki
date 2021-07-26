@@ -1,23 +1,9 @@
- 
 import React from 'react'
 import { FlatList } from 'react-native'
 import { Card } from '../../molecules'
 import { ListContainer } from './styles'
 import { theme } from '../../../styles/theme'
 import { CustomText } from '../../atoms'
-
-const FAKE_DATa = [
-  {
-    id: 0,
-    image_url:
-      'https://w7.pngwing.com/pngs/694/623/png-transparent-anakin-skywalker-lego-star-wars-toy-the-force-darth-vader-head-room-c3po-star-wars-darth-vader.png',
-  },
-  {
-    id: 1,
-    image_url:
-      'https://w7.pngwing.com/pngs/694/623/png-transparent-anakin-skywalker-lego-star-wars-toy-the-force-darth-vader-head-room-c3po-star-wars-darth-vader.png',
-  },
-]
 
 export const HomeList = ({ data, title }) => {
   return (
@@ -27,7 +13,7 @@ export const HomeList = ({ data, title }) => {
       </CustomText>
       <FlatList
         horizontal
-        data={FAKE_DATa}
+        data={data}
         renderItem={({ item }) => <Card item={item} />}
         keyExtractor={(item) => String(item.id)}
         contentContainerStyle={{

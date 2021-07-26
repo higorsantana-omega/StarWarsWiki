@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { CardContainer, CardImage } from './styles'
 import { useNavigation } from '@react-navigation/native'
@@ -13,8 +12,8 @@ export const Card = ({ item }) => {
     navigation.navigate('Detail')
   }
   return (
-    <CardContainer onPress={() => onSelectItem}>
-          <CardImage source={{ uri: item.image_url }}/>
+    <CardContainer onPress={() => onSelectItem()}>
+      <CardImage source={{ uri: item.image_url }} />
     </CardContainer>
   )
 }
