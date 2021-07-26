@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
 import { ScreenScrollContainer, Hero, GoBack } from '../../components'
-import { useDataStore } from '../../services/stores/dataStore'
+import { useDataStore } from '../../services/stores'
 
 export const Detail = () => {
   const { selectedData } = useDataStore()

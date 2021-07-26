@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
 import { CardContainer, CardImage } from './styles'
-import { useNavigation } from '@react-navigation/core'
-import { useDataStore } from '../../../services/stores/dataStore'
+import { useNavigation } from '@react-navigation/native'
+import { useDataStore } from '../../../services/stores'
 
 export const Card = ({ item }) => {
   const { setSelectedData } = useDataStore()
