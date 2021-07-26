@@ -6,7 +6,7 @@ import {
   ButtonsView,
 } from './styles'
 import { CustomText, Logo } from '~/components/atoms'
-import { Tag, IconButton } from '~/components/molecules'
+import { Tag, IconButton, PlayButton } from '~/components/molecules'
 import { colors } from '~/styles/colors'
 
 export const Hero = ({ item, onDetail }) => {
@@ -27,7 +27,7 @@ export const Hero = ({ item, onDetail }) => {
           <CustomText size={18}>{subtitle}</CustomText>
           <ButtonsView>
             <IconButton label="Favoritos" iconName="add-circle-outline" />
-
+            <PlayButton />
             {!onDetail && (
               <IconButton
                 label="Saiba mais"
