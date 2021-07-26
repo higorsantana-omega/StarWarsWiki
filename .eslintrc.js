@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 module.exports = {
   root: true,
   extends: '@react-native-community',
@@ -13,5 +12,6 @@ module.exports = {
   rules: {
     semi: [2, 'never'],
     'no-extra-boolean-cast': 'off',
+    'prettier/prettier': 0,
   },
 }

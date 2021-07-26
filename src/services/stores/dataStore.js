@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+ 
 import create from 'zustand'
 
 export const useDataStore = create((set) => ({

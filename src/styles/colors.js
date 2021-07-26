@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+ 
 export const colors = {
   white: '#FFFFF',
   light: '#E5E5E5',

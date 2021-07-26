@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import React from 'react'
 import { CardContainer, CardImage } from './styles'
 import { useNavigation } from '@react-navigation/native'

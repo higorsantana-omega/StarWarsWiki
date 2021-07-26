@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+ 
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import { Text } from '../../../components/atoms'

@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+ 
 import { Dimensions, PixelRatio } from 'react-native'
 
 const { width } = Dimensions.get('window')

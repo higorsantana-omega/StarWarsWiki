@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+ 
 import React from 'react'
 import { Text } from '../../../components/atoms'
 import { TagContainer } from './styles'

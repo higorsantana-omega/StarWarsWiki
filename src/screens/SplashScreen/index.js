@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+ 
 import React, { useEffect } from 'react'
 import { Container, CustomText, Logo } from '../../components'
 

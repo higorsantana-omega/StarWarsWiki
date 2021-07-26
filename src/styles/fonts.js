@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+ 
 export const fonts = {
   regular: 'SourceSansPro_400Regular',
   semiBold: 'SourceSansPro_600SemiBold',
