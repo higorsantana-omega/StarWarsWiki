@@ -11,6 +11,9 @@ import {
 } from '@expo-google-fonts/source-sans-pro'
 import { theme } from './src/styles'
 import { Routes } from './src/routes'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+
+// AsyncStorage.clear()
 
 export default function App() {
   let [fontsLoaded] = useFonts({
