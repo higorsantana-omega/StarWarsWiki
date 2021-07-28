@@ -15,7 +15,7 @@ import { useDataStore } from '~/services/stores'
 export const Hero = ({ item, onDetail }) => {
   const navigation = useNavigation()
   const { setSelectedData } = useDataStore()
-  const [loading, setLoading] = useState(true)
+  const [, setLoading] = useState(true)
   const [isFavorite, setIsFavorite] = useState(false)
   const { addFavorite, getFavorites, removeFavorite } = useFavorites()
   const { image_url, title, subtitle, type } = item
@@ -52,6 +52,13 @@ export const Hero = ({ item, onDetail }) => {
     navigation.navigate('Watch')
   }
 
+  const onPressDetail = () => {
+    setSelectedData(item)
+    navigation.navigate('Detail')
+  }
+
+
+
   return (
     <HeroContainer>
       <HeroImageBackground
@@ -75,6 +82,7 @@ export const Hero = ({ item, onDetail }) => {
             <PlayButton onPress={onPressWatch}/>
             {!onDetail && (
               <IconButton
+                onPress={onPressDetail}
                 label="Saiba mais"
                 iconName="information-circle-outline"
               />

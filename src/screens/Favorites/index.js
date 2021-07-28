@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react'
-import { CustomText, ScreenScrollContainer } from '~/components'
+import React, { useEffect, useState } from 'react'
+import { CustomText, ScreenScrollContainer, GridList } from '~/components'
 import { useFavorites } from '~/services/hooks'
 
 export const FavoritesScreen = ({ navigation }) => {
+  const [favoritesList, setFavoritesList] = useState([])
   const { getFavorites } = useFavorites()
   const callGetFavorites = async () => {
     const favorites = await getFavorites()
-    console.log(favorites)
+    setFavoritesList(favorites)
   }
 
   useEffect(() => {
@@ -22,6 +23,7 @@ export const FavoritesScreen = ({ navigation }) => {
       <CustomText fontFamily="bold" size={28}>
         Favoritos
       </CustomText>
+      <GridList data={favoritesList} />
     </ScreenScrollContainer>
   )
 }
