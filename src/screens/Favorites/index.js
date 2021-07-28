@@ -23,7 +23,6 @@ export const FavoritesScreen = ({ navigation }) => {
       <CustomText fontFamily="bold" size={28}>
         Favoritos
       </CustomText>
-      <GridList data={favoritesList} />
     </ScreenScrollContainer>
   )
 }
