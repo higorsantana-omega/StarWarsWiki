@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {
-  CustomText,
-  GridList,
-  Input,
-  ScreenScrollContainer,
-} from '~/components'
+import { ScreenScrollContainer, GridList, Input, CustomText } from '~/components'
 import { useGetData } from '~/services/hooks'
 
 export const SearchScreen = () => {
@@ -16,19 +11,18 @@ export const SearchScreen = () => {
   const callGetSearchResult = async () => {
     setLoading(true)
     const result = await getSearchResult(query)
-    console.log(result)
     if (!result.error) {
       setResults(result)
     }
     setLoading(false)
   }
+
   useEffect(() => {
     if (query.length > 0 && query.length % 3 === 0) {
       callGetSearchResult()
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query])
-
   return (
     <ScreenScrollContainer withPadding>
       <CustomText fontFamily="bold" size={28} mb={24}>
@@ -38,9 +32,9 @@ export const SearchScreen = () => {
         mb={24}
         value={query}
         onChangeText={(text) => setQuery(text)}
-        placeholder="Pesquise por filme ou personagem"
+        placeholder="Filme ou nome do personagem"
       />
-      <GridList loading={loading} type="search" data={results} />
+      <GridList loading={loading} data={results} type="search" />
     </ScreenScrollContainer>
   )
 }

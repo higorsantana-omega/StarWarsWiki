@@ -3,10 +3,10 @@ import { FlatList } from 'react-native'
 import { CustomText, Container } from '~/components/atoms'
 import { Card } from '~/components/molecules'
 import { SeparatorView, NoDataImage } from './styles'
-import noDataFavorites from '../../../../assets/no-data-favorite.png'
 import noDataSearch from '../../../../assets/no-data-search.png'
+import noDataFavorites from '../../../../assets/no-data-favorite.png'
 
-export const GridList = ({ data, loading, type }) => {
+export const GridList = ({ data, type, loading }) => {
   return (
     <FlatList
       refreshing={loading}

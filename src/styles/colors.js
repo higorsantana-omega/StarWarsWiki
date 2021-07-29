@@ -5,4 +5,5 @@ export const colors = {
   dark: '#161616',
   black: 'rgb(0, 0, 0)',
   grey: 'rgb(91, 91, 91)',
+  darkTransparent: 'rgba(22, 22, 22, 0.70)',
 }

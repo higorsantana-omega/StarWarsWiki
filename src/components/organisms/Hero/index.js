@@ -7,7 +7,12 @@ import {
   ButtonsView,
 } from './styles'
 import { CustomText, Logo } from '~/components/atoms'
-import { Tag, IconButton, PlayButton } from '~/components/molecules'
+import {
+  Tag,
+  IconButton,
+  PlayButton,
+  FavoritesStateModal,
+} from '~/components/molecules'
 import { colors } from '~/styles/colors'
 import { useFavorites } from '~/services/hooks'
 import { useDataStore } from '~/services/stores'
@@ -16,6 +21,7 @@ export const Hero = ({ item, onDetail }) => {
   const navigation = useNavigation()
   const { setSelectedData } = useDataStore()
   const [, setLoading] = useState(true)
+  const [showFavoriteModal, setShowFavoriteModal] = useState(false)
   const [isFavorite, setIsFavorite] = useState(false)
   const { addFavorite, getFavorites, removeFavorite } = useFavorites()
   const { image_url, title, subtitle, type } = item
@@ -57,8 +63,6 @@ export const Hero = ({ item, onDetail }) => {
     navigation.navigate('Detail')
   }
 
-
-
   return (
     <HeroContainer>
       <HeroImageBackground
@@ -75,11 +79,15 @@ export const Hero = ({ item, onDetail }) => {
           <CustomText size={18}>{subtitle}</CustomText>
           <ButtonsView>
             <IconButton
-              onPress={() => isFavorite ? removeDataFromFavorite() : addDataToFavorite()}
+              onPress={() =>
+                isFavorite ? removeDataFromFavorite() : addDataToFavorite()
+              }
               label={isFavorite ? 'Rem. Favoritos' : 'Add Favoritos'}
-              iconName={isFavorite ? 'remove-circle-outline' : 'add-circle-outline'}
+              iconName={
+                isFavorite ? 'remove-circle-outline' : 'add-circle-outline'
+              }
             />
-            <PlayButton onPress={onPressWatch}/>
+            <PlayButton onPress={onPressWatch} />
             {!onDetail && (
               <IconButton
                 onPress={onPressDetail}
@@ -90,6 +98,13 @@ export const Hero = ({ item, onDetail }) => {
           </ButtonsView>
         </HeroGradient>
       </HeroImageBackground>
+      {showFavoriteModal && (
+        <FavoritesStateModal
+          type="add"
+          visible={showFavoriteModal}
+          onClose={() => setShowFavoriteModal(false)}
+        />
+      )}
     </HeroContainer>
   )
 }
