@@ -21,7 +21,7 @@ export const Hero = ({ item, onDetail }) => {
   const navigation = useNavigation()
   const { setSelectedData } = useDataStore()
   const [, setLoading] = useState(true)
-  const [showFavoriteModal, setShowFavoriteModal] = useState(false)
+  const [showFavoriteModal, setShowFavoriteModal] = useState(null)
   const [isFavorite, setIsFavorite] = useState(false)
   const { addFavorite, getFavorites, removeFavorite } = useFavorites()
   const { image_url, title, subtitle, type } = item
@@ -43,14 +43,24 @@ export const Hero = ({ item, onDetail }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const closeFavoriteModal = () => {
+    setTimeout(() => {
+      setShowFavoriteModal(null)
+    }, 1000)
+  }
+
   const addDataToFavorite = async () => {
     await addFavorite(item)
+    setShowFavoriteModal('added')
     checkIsFavorite()
+    closeFavoriteModal()
   }
 
   const removeDataFromFavorite = async () => {
     await removeFavorite(item)
+    setShowFavoriteModal('removed')
     checkIsFavorite()
+    closeFavoriteModal()
   }
 
   const onPressWatch = () => {
@@ -100,9 +110,9 @@ export const Hero = ({ item, onDetail }) => {
       </HeroImageBackground>
       {showFavoriteModal && (
         <FavoritesStateModal
-          type="add"
-          visible={showFavoriteModal}
-          onClose={() => setShowFavoriteModal(false)}
+          type={showFavoriteModal}
+          visible={!!showFavoriteModal}
+          onClose={() => setShowFavoriteModal(null)}
         />
       )}
     </HeroContainer>
